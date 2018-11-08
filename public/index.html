@@ -36,17 +36,10 @@
     $('#form').submit((e) => {
       e.preventDefault();
 
-<<<<<<< HEAD
       $.post(`https://urlminified.herokuapp.com/api/v1/urlshortener`, { originalURL: $('#originalURL').val()})
         .done(function (data) {
           $('#short-url').text('https://urlminified.herokuapp.com/' + data.shortURL)
           $('#short-url').attr('href', 'https://urlminified.herokuapp.com/' + data.shortURL)
-=======
-      $.post(`http://localhost:3000/api/v1/urlshortener`, { originalURL: $('#originalURL').val()})
-        .done(function (data) {
-          $('#short-url').text('http://localhost:3000/' + data.shortURL)
-          $('#short-url').attr('href', 'http://localhost:3000/' + data.shortURL)
->>>>>>> master
 
           $('#new-url-div').show();
         });
