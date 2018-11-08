@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Url Shortener</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+  <!-- <script src="main.js"></script> -->
+</head>
+
+<body>
+  <h1>URl Shortener</h1>
+  <form id='form'>
+    Enter your URL:
+    <input id='originalURL' type="text" style="width: 300px;">
+    <input type="submit">
+  </form>
+  <br>
+  <br>
+  <div id='new-url-div'>
+    <h4>new URL: </h4>
+    <a href="" id='short-url'></a>
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+  <script>
+
+    $('#new-url-div').hide();
+
+    $('#form').submit((e) => {
+      e.preventDefault();
+
+      $.post(`http://localhost:3000/api/v1/urlshortener`, { originalURL: $('#originalURL').val()})
+        .done(function (data) {
+          $('#short-url').text('http://localhost:3000/' + data.shortURL)
+          $('#short-url').attr('href', 'http://localhost:3000/' + data.shortURL)
+
+          $('#new-url-div').show();
+        });
+        
+
+    })
+  </script>
+
+</body>
+
+</html>
