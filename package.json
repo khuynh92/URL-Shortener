@@ -10,6 +10,7 @@
     "test": "jest --forceExit",
     "lint": "eslint **/*.js"
   },
+<<<<<<< HEAD
   "jest": {
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/"
@@ -25,6 +26,8 @@
     },
     "testURL": "http://localhost/"
   },
+=======
+>>>>>>> master
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khuynh92/chewsit-server.git"
