@@ -2,7 +2,7 @@
 
 # URL-Shortener
 
-##purpose
+## purpose
 
 This web app takes a URL and will return a new shortened URL
 
