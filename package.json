@@ -10,6 +10,21 @@
     "test": "jest --forceExit",
     "lint": "eslint **/*.js"
   },
+  "jest": {
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "testPathIgnorePatterns": [
+      "jest-setup.js"
+    ],
+    "setupFiles": [
+      "./__tests__/jest-setup.js"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "testURL": "http://localhost/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/khuynh92/chewsit-server.git"
@@ -31,6 +46,9 @@
     "eslint": "^4.19.1",
     "express": "^4.16.3",
     "http-errors": "^1.6.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "jest": "^22.4.4",
     "mockgoose": "^7.3.5",
     "mongoose": "^5.1.3",
