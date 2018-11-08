@@ -2,7 +2,7 @@ import express from 'express';
 
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
-
+import cors from 'cors';
 import errorHandler from './middleware/error.js';
 import notFound from './middleware/404.js';
 import noAuth from './middleware/401.js';
@@ -15,6 +15,7 @@ let app = express();
 
 //dev & parser middleware
 app.use(morgan('dev'));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
